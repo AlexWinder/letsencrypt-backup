@@ -84,7 +84,27 @@ Once cloned you will need to set up a crontab to run periodically to execute the
 
 You will need to drop in the correct location to the directory as per your system when you cloned the repository.
 
+### File Permissions
+
+You may run in to some file permissions issues, this is normally caused by the backup.sh script not be accessible by the current user. To resolve this you should change the permissions of the file to allow it to be executable by the current user.
+
+> chmod 700 /location/to/letsencrypt-backup/backup.sh
+
+You will need to drop in the correct location to the directory as per your system when you cloned the repos
+
+### Things of Note
+
 The [backup.sh](backup.sh) script will by default put compressed backup files in the `/var/backups/letsencrypt` directory. If you would prefer this be in a different location then please change this as per your system requirements.
+
+By default the script will keep configuration files up to 120 days old. If you wish to change this then you are welcome to do so, this is currently configured as per the `days` variable on line 10.
+
+## Extracting Backups
+
+If you wish to extract a particular backup you can do so with the following command:
+
+> tar -xvf /var/backups/letsencrypt/letsencrypt_backup-DATE-TIME.tar.gz
+
+You should swap in the path and filename as per your own setup. This will extract the backup to its own directory as per your current working directory.
 
 ## License
 
