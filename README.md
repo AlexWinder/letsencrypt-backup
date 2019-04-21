@@ -96,7 +96,7 @@ You will need to drop in the correct location to the directory as per your syste
 
 The [backup.sh](backup.sh) script will by default put compressed backup files in the `/var/backups/letsencrypt` directory. If you would prefer this be in a different location then please change this as per your system requirements.
 
-By default the script will keep configuration files up to 120 days old. If you wish to change this then you are welcome to do so, this is currently configured as per the `days` variable on line 10.
+By default the script will keep configuration files up to 120 days old. Configuration files older than this will be automatically deleted as per the backup script. If you wish to change this then you are welcome to do so, this is currently configured as per the `days` variable on line 10.
 
 ## Extracting Backups
 
