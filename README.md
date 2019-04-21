@@ -15,3 +15,7 @@ This simple BASH script is designed to easily backup these files in a compressed
 ## Contributors
 
 - [Alex Winder](https://www.alexwinder.uk) 
+
+# License
+
+This project is licensed under the [MIT License](LICENSE.md).
