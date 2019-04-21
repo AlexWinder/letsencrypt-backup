@@ -90,7 +90,11 @@ You may run in to some file permissions issues, this is normally caused by the b
 
 > chmod 700 /location/to/letsencrypt-backup/backup.sh
 
-You will need to drop in the correct location to the directory as per your system when you cloned the repos
+You will need to drop in the correct location to the directory as per your system when you cloned the repository.
+
+To test that the permissions issue is now resolved you can attempt to execute the script manually.
+
+> /location/to/letsencrypt-backup/backup.sh
 
 ### Things of Note
 
