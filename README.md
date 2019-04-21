@@ -1,21 +1,36 @@
 # Let's Encrypt Backup
 
-During installation of Let's Encrypt/Certbot you are advised that you should take a backup of your configuration regularly. This configuration also includes your account credentials. 
+During installation of Let's Encrypt/Certbot you are advised that you should take a backup of your configuration regularly. This configuration also includes your account credentials.
 
-```
-   Your account credentials have been saved in your Certbot
-   configuration directory at /etc/letsencrypt. You should make a
-   secure backup of this folder now. This configuration directory will
-   also contain certificates and private keys obtained by Certbot so
-   making regular backups of this folder is ideal.
-```
+>Your account credentials have been saved in your Certbot
+>configuration directory at /etc/letsencrypt. You should make a
+>secure backup of this folder now. This configuration directory will
+>also contain certificates and private keys obtained by Certbot so
+>making regular backups of this folder is ideal.
 
-This simple BASH script is designed to easily backup these files in a compressed/archived format.
+This simple BASH script is designed to easily backup these files in a compressed/archived format to a location outside of production.
 
 ## Contributors
 
-- [Alex Winder](https://www.alexwinder.uk) 
+- [Alex Winder](https://www.alexwinder.uk)
 
-# License
+## Getting Started
+
+The simplest way to get started is to clone the repository:
+> git clone https://github.com/AlexWinder/letsencrypt-backup.git
+
+This script assumes that you are using the default directory of `/etc/letsencrypt`. If your Let's Encrypt configuration files are in a different location then you will need to amend this as appropriate.
+
+Once cloned you will need to set up a crontab to run periodically to execute the [backup.sh](backup.sh) script. The example below will run the backup script every day at 00:00, however you are free to run the script as often or as little as your requirements or resources permit.
+
+```crontab
+0 0 * * * /location/to/letsencrypt-backup/backup.sh
+```
+
+You will need to drop in the correct location to the directory as per your system when you cloned the repository.
+
+The [backup.sh](backup.sh) script will by default put compressed backup files in the `/var/backups/letsencrypt` directory. If you would prefer this be in a different location then please change this as per your system requirements.
+
+## License
 
 This project is licensed under the [MIT License](LICENSE.md).
