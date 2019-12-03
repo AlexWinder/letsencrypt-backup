@@ -18,6 +18,10 @@ tmp_location="/tmp/"
 # Build the backup name
 backup_name="letsencrypt_backup-${date}"
 
+######################################################
+##### EDITING BELOW MAY CAUSE UNEXPECTED RESULTS #####
+######################################################
+
 # Make a temporary directory
 mkdir -p ${tmp_location}${backup_name}
 
