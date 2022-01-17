@@ -83,20 +83,20 @@ git clone https://github.com/AlexWinder/letsencrypt-backup.git
 
 This script assumes that you are using the default directory of `/etc/letsencrypt`. If your Let's Encrypt configuration files are in a different location then you will need to amend this as appropriate.
 
-Once cloned you will need to set up a crontab to run periodically to execute the [backup.sh](backup.sh) script. The example below will run the backup script every day at 00:00, however you are free to run the script as often or as little as your requirements or resources permit.
+Once cloned you will need to set up a crontab to run periodically to execute the [letsencrypt-backup.sh](letsencrypt-backup.sh) script. The example below will run the backup script every day at 00:00, however you are free to run the script as often or as little as your requirements or resources permit.
 
 ```crontab
-0 0 * * * /location/to/letsencrypt-backup/backup.sh
+0 0 * * * /location/to/letsencrypt-backup/letsencrypt-backup.sh
 ```
 
 You will need to drop in the correct location to the directory as per your system when you cloned the repository.
 
 ### File Permissions
 
-You may run in to some file permissions issues, this is normally caused by the backup.sh script not be accessible by the current user. To resolve this you should change the permissions of the file to allow it to be executable by the current user.
+You may run in to some file permissions issues, this is normally caused by the letsencrypt-backup.sh script not be accessible by the current user. To resolve this you should change the permissions of the file to allow it to be executable by the current user.
 
 ```bash
-chmod 700 /location/to/letsencrypt-backup/backup.sh
+chmod 700 /location/to/letsencrypt-backup/letsencrypt-backup.sh
 ```
 
 You will need to drop in the correct location to the directory as per your system when you cloned the repository.
@@ -104,12 +104,12 @@ You will need to drop in the correct location to the directory as per your syste
 To test that the permissions issue is now resolved you can attempt to execute the script manually.
 
 ```bash
-/location/to/letsencrypt-backup/backup.sh
+/location/to/letsencrypt-backup/letsencrypt-backup.sh
 ```
 
 ### Things of Note
 
-The [backup.sh](backup.sh) script will by default put compressed backup files in the `/var/backups/letsencrypt` directory. If you would prefer this be in a different location then please change this as per your system requirements.
+The [letsencrypt-backup.sh](letsencrypt-backup.sh) script will by default put compressed backup files in the `/var/backups/letsencrypt` directory. If you would prefer this be in a different location then please change this as per your system requirements.
 
 By default the script will keep configuration files up to 120 days old. Configuration files older than this will be automatically deleted as per the backup script. If you wish to change this then you are welcome to do so, this is currently configured as per the `days` variable on line 10.
 
