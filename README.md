@@ -107,15 +107,14 @@ To test that the permissions issue is now resolved you can attempt to execute th
 /location/to/letsencrypt-backup/letsencrypt-backup.sh
 ```
 
-### Custom Paths
+### Custom Arguments
 
-By default the script will use the following settings:
+There are a number of supported flags which allow you to override parts of the script to meet your requirements:
 
-- Configuration files are backed up from `/etc/letsencrypt/`.
-- Backup files are sent to `/var/backups/letsencrypt/`.
-- Backup files are kept for 120 days.
-
-If you wish to override any of these options you can pass in any of the following flags to the script with your custom argument:
+- `--help` - Show a help guide on the script. If used then no other parameters will be considered.
+- `--from` - The location where your Let's Encrypt configuration files are. Default: `/etc/letsencrypt`.
+- `--to` - Where you would like to back the files up to. Default: `/var/backups/letsencrypt`.
+- `--days` - The number of days to keep backup files before deleting them. Default: `120` (days).
 
 ```bash
 ./letsencrypt-backup.sh --from <configuration location> --to <backup location> --days <number of days to store backups>
