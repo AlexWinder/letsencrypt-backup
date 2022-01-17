@@ -71,7 +71,7 @@ root@0:~# /usr/bin/certbot --version
 certbot 0.28.0
 ```
 
-Whilst these versions have been tested your mileage may vary, there is very little reason if you are using an older/newer version of Debian or another flavour of Linux you may need to alter the directory locations, but the script itself should still work as it relies primarily on simple BASH file system commands and Tar.
+Whilst these versions have been tested your mileage may vary, there is very little reason if you are using an older/newer version of Debian or another flavour of Linux you may need to alter the directory locations, but the script itself should still work as it relies primarily on simple BASH file system commands and `tar`.
 
 ## Getting Started
 
@@ -81,7 +81,7 @@ The simplest way to get started is to clone the repository:
 git clone https://github.com/AlexWinder/letsencrypt-backup.git
 ```
 
-This script assumes that you are using the default directory of `/etc/letsencrypt`. If your Let's Encrypt configuration files are in a different location then you will need to amend this as appropriate.
+This script assumes that you are using the default directory of `/etc/letsencrypt`. If your Let's Encrypt configuration files are in a different location then you will need to amend this as appropriate, as detailed in the section below.
 
 Once cloned you will need to set up a crontab to run periodically to execute the [letsencrypt-backup.sh](letsencrypt-backup.sh) script. The example below will run the backup script every day at 00:00, however you are free to run the script as often or as little as your requirements or resources permit.
 
@@ -107,11 +107,29 @@ To test that the permissions issue is now resolved you can attempt to execute th
 /location/to/letsencrypt-backup/letsencrypt-backup.sh
 ```
 
-### Things of Note
+### Custom Paths
 
-The [letsencrypt-backup.sh](letsencrypt-backup.sh) script will by default put compressed backup files in the `/var/backups/letsencrypt` directory. If you would prefer this be in a different location then please change this as per your system requirements.
+By default the script will use the following settings:
 
-By default the script will keep configuration files up to 120 days old. Configuration files older than this will be automatically deleted as per the backup script. If you wish to change this then you are welcome to do so, this is currently configured as per the `days` variable on line 10.
+- Configuration files are backed up from `/etc/letsencrypt/`.
+- Backup files are sent to `/var/backups/letsencrypt/`.
+- Backup files are kept for 120 days.
+
+If you wish to override any of these options you can pass in any of the following flags to the script with your custom argument:
+
+```bash
+./letsencrypt-backup.sh --from <configuration location> --to <backup location> --days <number of days to store backups>
+```
+
+For example:
+
+```bash
+./letsencrypt-backup.sh --from /etc/certbot --to /home/certbot/backups --days 365
+```
+
+In the above example we are taking the configuration files in `/etc/certbot`, compressing and then sending them to `/home/certbot/backups`, and deleting any which are older than 365 days old.
+
+You are free to use any combination of the above flags (`--from`, `--to`, and `--days`). Any which you do not specify will take the default value as listed above.
 
 ## Extracting Backups
 
