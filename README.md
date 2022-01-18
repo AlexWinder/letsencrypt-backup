@@ -101,10 +101,10 @@ chmod 700 /location/to/letsencrypt-backup/letsencrypt-backup.sh
 
 You will need to drop in the correct location to the directory as per your system when you cloned the repository.
 
-To test that the permissions issue is now resolved you can attempt to execute the script manually.
+To test that the permissions issue is now resolved you can attempt to execute the script manually, using the `--help` flag to check if the script actually executes.
 
 ```bash
-/location/to/letsencrypt-backup/letsencrypt-backup.sh
+/location/to/letsencrypt-backup/letsencrypt-backup.sh --help
 ```
 
 ### Custom Arguments
