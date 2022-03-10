@@ -24,9 +24,9 @@ while [ $# -gt 0 ]; do
         echo
         echo "Options:"
         echo
-        echo "--from    The location where your Let's Encrypt configuration files are. Default: /etc/letsencrypt"
-        echo "--to      Where you would like to back the files up to. Default: /var/backups/letsencrypt"
-        echo "--days    The number of days to keep backup files before deleting them. Default: 120 (days)"
+        echo "--from    The location where your Let's Encrypt configuration files are. Default: ${from}"
+        echo "--to      Where you would like to back the files up to. Default: ${to}"
+        echo "--days    The number of days to keep backup files before deleting them. Default: ${days} (days)"
         echo "--help    Display help about this script"
         echo
         exit 0
