@@ -91,21 +91,19 @@ Once cloned you will need to set up a crontab to run periodically to execute the
 
 You will need to drop in the correct location to the directory as per your system when you cloned the repository.
 
-### File Permissions
+### Test Script
 
-You may run in to some file permissions issues, this is normally caused by the letsencrypt-backup.sh script not be accessible by the current user. To resolve this you should change the permissions of the file to allow it to be executable by the current user.
+To test that the permissions issue is now resolved you can attempt to execute the script manually, using the `--help` flag to check if the script actually executes.
 
-```bash
-chmod 700 /location/to/letsencrypt-backup/letsencrypt-backup.sh
-```
-
-You will need to drop in the correct location to the directory as per your system when you cloned the repository.
-
-To test that the permissions issue is now resolved you can attempt to execute the script manually.
+To test that the script runs as expected you can use the `--help` flag.
 
 ```bash
-/location/to/letsencrypt-backup/letsencrypt-backup.sh
+/location/to/letsencrypt-backup/letsencrypt-backup.sh --help
 ```
+
+If you don't get any errors then all is working as expected and you can use the script to backup your Let's Encrypt configuration. 
+
+If the script doesn't execute then the most common cause of this is due to file permissions or a missing dependency. Make notes of the output errors to give an indication as to the reason of why the file couldn't be executed.
 
 ### Custom Arguments
 
