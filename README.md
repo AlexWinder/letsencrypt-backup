@@ -2,7 +2,7 @@
 
 During installation of Let's Encrypt/Certbot you are advised that you should take a backup of your configuration regularly. This configuration also includes your account credentials.
 
-```shell
+```console
 Your account credentials have been saved in your Certbot
 configuration directory at /etc/letsencrypt. You should make a
 secure backup of this folder now. This configuration directory will
@@ -77,7 +77,7 @@ Whilst these versions have been tested your mileage may vary, there is very litt
 
 The simplest way to get started is to clone the repository:
 
-```shell
+```bash
 git clone https://github.com/AlexWinder/letsencrypt-backup.git
 ```
 
