@@ -124,7 +124,7 @@ For example:
 ./letsencrypt-backup.sh --from /etc/certbot --to /home/certbot/backups --days 365
 ```
 
-In the above example we are taking the configuration files in `/etc/certbot`, compressing and then sending them to `/home/certbot/backups`, and deleting any which are older than 365 days old.
+In the above example we are taking the configuration files in `/etc/certbot`, compressing and then sending them to `/home/certbot/backups`, and deleting any files which are older than 365 days old in the backup `to` directory.
 
 You are free to use any combination of the above flags (`--from`, `--to`, and `--days`). Any which you do not specify will take the default value as listed above.
 
