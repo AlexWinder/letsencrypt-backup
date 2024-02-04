@@ -14,7 +14,7 @@ This simple BASH script is designed to easily backup these files in a compressed
 
 ## Contributors
 
-- [Alex Winder](https://www.alexwinder.uk)
+- [Alex Winder](https://alexwinder.com)
 
 ## Prerequisites
 
